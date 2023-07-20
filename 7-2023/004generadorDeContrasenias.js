@@ -8,7 +8,12 @@
  * (Pudiendo combinar todos estos parámetros entre ellos)
  */
 // 
-let numeroAleatorio = Math.random(Math.floor())*100;
+let numeroDeCaracteres = long => {
+    return long >= 8 && long <= 16 ? true : false
+}
+console.log(numeroDeCaracteres(5))
+
+let numeroAleatorio = Math.floor(Math.random()*1000);
 console.log(numeroAleatorio)
 
 let letra = String.fromCharCode(numeroAleatorio)
