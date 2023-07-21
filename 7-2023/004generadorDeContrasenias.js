@@ -1,7 +1,7 @@
 /*
  * Escribe un programa que sea capaz de generar contraseñas de forma aleatoria.
  * Podrás configurar generar contraseñas con los siguientes parámetros:
- * - Longitud: Entre 8 y 16.
+ * - longituditud: Entre 8 y 16.
  * - Con o sin letras mayúsculas.
  * - Con o sin números.
  * - Con o sin símbolos.
@@ -10,20 +10,31 @@
 
 // Necesito que el valor random no sobrepase el largo del array 
 
-let numeroDeCaracteres = long => {
-    const listaDeCaracteres = ["A", "j", "2", "7", "#", "%"]
-    const listaContraseña = []
-    if (long >= 8 && long <= 16) {
-        while (listaContraseña.length < long) {
+function generarContraseña(longitud, mayuscula, numeros, simbolo) {
+    const listaDeMayusculas = ["A", "B", "C", "D", "E"];
+    const listaDeMinusculas = ["a", "b","c", "d", "e"];
+    const listaDeNumeros = ["1", "2", "3", "4", "5", "6", "7"];
+    const listaDeSimbolos = ["!", "#", "$", "%", "&", "/", "?"];
+    const listaDeCaracteres = [];
+    const listaContraseña = [];
+    if (mayuscula) {
+        listaDeMinusculas.map(letra => listaDeCaracteres.push(letra))
+        listaDeMayusculas.map(letra => listaDeCaracteres.push(letra))
+    } else {
+        listaDeMinusculas.map(letra => listaDeCaracteres.push(letra))
+    }
+    if (numeros) listaDeNumeros.map(num => listaDeCaracteres.push(num))
+    if (simbolo) listaDeSimbolos.map(sim => listaDeCaracteres.push(sim))
+    if (longitud >= 8 && longitud <= 16) {
+        while (listaContraseña.length < longitud) {
             let posicionEnLaLista = Math.floor(Math.random() * listaDeCaracteres.length);
             listaContraseña.push(listaDeCaracteres[posicionEnLaLista])
-    
-            console.log(listaContraseña.join(""))
         }
+        console.log(listaContraseña.join(""))
     } else {
         console.log("Su contraseña debe contener entre 8 y 16 caracteres")
     }
 }
-numeroDeCaracteres(8)
+generarContraseña(8, true, true, true)
 
 
