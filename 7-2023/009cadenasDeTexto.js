@@ -19,6 +19,16 @@ let isograma = frase => {
     let respuesta = cantidadDeCaracteres.every(elem => elem === valorAConfirmar) ? "Es un isograma" : "No es un isograma"
     return respuesta
 }
-
 // PANGRAMA : frase en la que aparecen todas las letras de un alfabeto
-
+ // hay que eliminar signos 
+let heterograma = frase => {
+    const letras = [...new Set(frase.replaceAll(" ", "").toLowerCase().split(""))];
+    const cantidadDeCaracteres = []
+    for (let i = 0; i < letras.length; i++) {
+        let letra = letras[i]
+        let arrCaracInd = letras.filter(elem => elem === letra)
+        cantidadDeCaracteres.push(arrCaracInd.length)
+    }
+    let resultado = cantidadDeCaracteres.length === 27 ? "Es un heterograma" : "No es un heterograma"
+    return resultado
+}
