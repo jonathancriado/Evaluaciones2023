@@ -8,9 +8,17 @@
 
 // ISOGRAMA : frase en la que cada letra aparece el mismo numero de veces
 let isograma = frase => {
-    frase.split("")
+    const letras = frase.replaceAll(" ", "").toLowerCase().split("");
+    const cantidadDeCaracteres = []
+    for (let i = 0; i < letras.length; i++) {
+        let letra = letras[i]
+        let arrCaracInd = letras.filter(elem => elem === letra)
+        cantidadDeCaracteres.push(arrCaracInd.length)
+    }
+    let valorAConfirmar = cantidadDeCaracteres[0]
+    let respuesta = cantidadDeCaracteres.every(elem => elem === valorAConfirmar) ? "Es un isograma" : "No es un isograma"
+    return respuesta
 }
-console.log("aaabbbcccdddd") // false
 
 // PANGRAMA : frase en la que aparecen todas las letras de un alfabeto
 
