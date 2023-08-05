@@ -20,7 +20,6 @@ function rick() {
     .then((response) => response.json())
     .then((data) => console.log(`Mi nombre es ${data.name} soy el ser mas inteligente del universo. Provengo de ${data.origin.name}`))
     .catch((error) => console.error("Error al obtener películas:", error));
-  
 }
 rick()
 
