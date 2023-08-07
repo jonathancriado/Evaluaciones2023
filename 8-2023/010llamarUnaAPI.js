@@ -12,15 +12,7 @@
 // 2) npm init -y
 // 3) npm install node-fetch@2
 
-const apiUrl = 'https://rickandmortyapi.com/api/character/1';
-
-// Solicitar la lista de películas al servidor utilizando el verbo GET
-function rick() {
-  fetch(apiUrl)
-    .then((response) => response.json())
-    .then((data) => console.log(`Mi nombre es ${data.name} soy el ser mas inteligente del universo. Provengo de ${data.origin.name}`))
-    .catch((error) => console.error("Error al obtener películas:", error));
-}
-rick()
-
-
+fetch('https://rickandmortyapi.com/api/character/1')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.log("Error:", error))
