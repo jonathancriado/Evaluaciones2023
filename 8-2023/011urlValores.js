@@ -8,12 +8,11 @@
 
 let parameters = url => {
     let urlChange = url.replaceAll("&", "=")
-    let urlKeysAndValues = urlChange.split("=")
+    const urlKeysAndValues = urlChange.split("=")
     const urlValues = []
     for (let i = 1; i < urlKeysAndValues.length; i += 2) {
         urlValues.push(urlKeysAndValues[i])
     }
-    console.log(urlValues)
+    return urlValues;
 }
-
-parameters("https://retosdeprogramacion.com?year=2023&challenge=0&name=jony")
+console.log(parameters("https://retosdeprogramacion.com?year=2023&challenge=0&name=jony"))
