@@ -1,15 +1,3 @@
-/*
- * Escribe un programa que sea capaz de generar contraseñas de forma aleatoria.
- * Podrás configurar generar contraseñas con los siguientes parámetros:
- * - longituditud: Entre 8 y 16.
- * - Con o sin letras mayúsculas.
- * - Con o sin números.
- * - Con o sin símbolos.
- * (Pudiendo combinar todos estos parámetros entre ellos)
- */
-
-// Necesito que el valor random no sobrepase el largo del array 
-
 function generarContraseña(longitud, mayuscula, numeros, simbolo) {
     const listaDeMayusculas = ["A", "B", "C", "D", "E"];
     const listaDeMinusculas = ["a", "b","c", "d", "e"];
